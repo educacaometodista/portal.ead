@@ -1,26 +1,34 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,600,700);
+
 /*
-  01. External Imports
+  01. Variables
   02. Navbar
+  03. Menu Navigation
 
 */
 
-/* 01. External Imports */
+/* 01. Variables */
 
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+:root {
+  --primary-color: #143d71;
+  --secondary-color: #ec2a24;
+  --neutral-color: #222;
+  --default-transition: 0.4s;
+}
 
 /* 02. Navbar */
 
 .topnavigation {
-  background: #222;
+  background: var(--neutral-color);
   height: 45px;
 }
 
 .topnav-item {
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: "Raleway", Arial, sans-serif;
   text-align: right;
   margin-right: 5%;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 .topnav-item * {
@@ -48,7 +56,7 @@
   height: 14px;
   width: 14px;
   position: absolute;
-  content: '';
+  content: "";
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
   opacity: 0;
@@ -56,22 +64,23 @@
 .topnav-item a:before {
   left: 0;
   top: 0;
-  border-left: 3px solid #c0392b;
-  border-top: 3px solid #c0392b;
+  border-left: 3px solid var(--secondary-color);
+  border-top: 3px solid var(--secondary-color);
   -webkit-transform: translate(100%, 50%);
   transform: translate(100%, 50%);
 }
 .topnav-item a:after {
   right: 0;
   bottom: 0;
-  border-right: 3px solid #c0392b;
-  border-bottom: 3px solid #c0392b;
+  border-right: 3px solid var(--secondary-color);
+  border-bottom: 3px solid var(--secondary-color);
   -webkit-transform: translate(-100%, -50%);
   transform: translate(-100%, -50%);
 }
 .topnav-item a:hover,
 .topnav-item .current a {
   color: #ffffff;
+  text-decoration: none;
 }
 .topnav-item a:hover:before,
 .topnav-item .current a:before,
@@ -80,4 +89,25 @@
   -webkit-transform: translate(0%, 0%);
   transform: translate(0%, 0%);
   opacity: 1;
+}
+
+/* 03. Menu Navigation */
+
+nav#portal-globalnav-wrapper {
+  background: var(--neutral-color);
+}
+
+.plone-navbar-nav .current > a,
+.plone-navbar-nav .selected > a,
+.plone-navbar-nav .current > a:hover,
+.plone-navbar-nav .selected > a:hover,
+.plone-navbar-nav .current > a:focus,
+.plone-navbar-nav .selected > a:focus {
+  background: transparent !important;
+  transition: var(--default-transition);
+}
+
+.plone-navbar-nav:hover {
+  background: #ffffff40 !important;
+  transition: var(--default-transition);
 }

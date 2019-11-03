@@ -1,0 +1,8 @@
+{
+  "name": "theme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/educacaometodista/portal.ead.git",
+  "author": "Léu Almeida <leo@webid.net.br>",
+  "license": "MIT"
+}
